@@ -1,4 +1,4 @@
-# 第一课
+# 第一课、初识 Vite
 
 > Vite 可能是下一代前端构建工具，通过这个项目研究一下，作为知识储备。
 
@@ -32,8 +32,16 @@ esbuild 构建依赖，rollup 打包。
 
 社区提供了更丰富的模板: https://github.com/vitejs/awesome-vite#templates
 
+## 实际效果
+
+一个简单的 demo 第一次启动 600 多毫秒，第二次启动 400 多毫秒。
+
+对比:
+
+- 之前一个用了 umi 项目的项目启动需要 50 秒;
+- 与 create-react-app 更具可比性，启动时间大约 5 秒。
+
 ## 参考
 
 npm create 命令:
 https://juejin.cn/post/6844903909958352909
-
