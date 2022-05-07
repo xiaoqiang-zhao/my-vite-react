@@ -32,6 +32,35 @@ Webpack 的插件形式提供了更多的选择空间的同时也带来了更高
 
 详见 [官网配置文档](https://cn.vitejs.dev/config/#build-target)。
 
+## 代码解析
+
+1. 以 index.html 作为入口。
+
+2. index.html 中以 script 的方式引入了 /src/main.tsx，从这里开始 Vite 开始发挥作用。
+
+```html
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+```
+
+3. main.tsx 中初始化 React 根组件。
+
+```jsx
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+```
+
+你可能注意到了那个叹号，这是TypeScript 非空断言。另外在 React 18 中，render 函数替换成了 createRoot 函数。
+
+React.StrictMode 是严格模式，用于发现潜在问题。不会渲染任何真的 Dom 节点。
+
+4. App 里面就是常规的 React 组件了。
+
 ## 参考
 
 [官网配置文档](https://cn.vitejs.dev/config/#server-host)
